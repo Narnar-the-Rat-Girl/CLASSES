@@ -1,6 +1,10 @@
 
 class doctor:
-    pass
+   def __str__(self):
+       pass
+       
+
+
 
 class doctormanager:
     pass
