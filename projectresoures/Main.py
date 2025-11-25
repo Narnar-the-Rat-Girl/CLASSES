@@ -6,13 +6,13 @@
 
 # Ashley
 class Doctor:
-   def __str__(self, doc_id='null', specialization='null', working_time='null',qualification='null', room_num='null'):
+   def __init__(self, doc_id='', name ='', specialization='', working_time='',qualification='', room_num=''):
        self.doc_id = doc_id
+       self.name = name
        self.specialization = specialization
        self.working_time = working_time
        self.qualification = qualification
        self.room_num = room_num
-       
 
 
 #ashley
@@ -34,4 +34,6 @@ class Management:
 
 
 if __name__ == "__main__":
-    pass
+    print("starting")
+    test = Doctor(name="test")
+    print(test.name)
