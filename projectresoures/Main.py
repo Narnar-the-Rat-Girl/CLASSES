@@ -62,11 +62,46 @@ class Doctor:
 class DoctorManager:
     pass
 
-
+#chloe
 class Patient:
-    pass
+    def __innit__(self, name="", age="", pid="", disease="", gender=""):
+        self.name = name
+        self.age = age
+        self.pid = pid
+        self.disease = disease
+        self.gender = gender
 
+    def get_name(self):
+        return self.name
+    def set_name(self, new_name):
+        self.name = new_name
 
+    def get_age(self):
+        return self.age
+    def set_age(self, new_age):
+        self.age = new_age
+
+    def get_pid(self):
+        return self.pid
+    def set_pid(self, new_pid):
+        self.pid = new_pid
+
+    def get_disease(self):
+        return self.disease
+    def set_disease(self, new_disease):
+        self.disease = new_disease
+
+    def get_gender(self):
+        return self.gender
+    def set_gender(self, new_gender):
+        self.gender = new_gender
+
+    #
+    def __str__():
+        pass
+    
+
+#chloe
 class PatientManager:
     pass
 
