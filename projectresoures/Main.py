@@ -132,7 +132,7 @@ class Management:
             pass
         if menu2 == 6:
             Management.display_menu()
-    def patients_menu()
+    def patients_menu():
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
         if menu3 == 1:
