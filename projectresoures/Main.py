@@ -65,7 +65,7 @@ class DoctorManager:
 #chloe
 class Patient:
     #initializes the properties for each patient object
-    def __innit__(self, name="", age="", pid="", disease="", gender=""):
+    def __init__(self, name="", age="", pid="", disease="", gender=""):
         self.name = name
         self.age = age
         self.pid = pid
