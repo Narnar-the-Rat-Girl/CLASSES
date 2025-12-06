@@ -65,17 +65,17 @@ class DoctorManager:
 #chloe
 class Patient:
     #initializes the properties for each patient object
-    def __init__(self, name="", age="", pid="", disease="", gender=""):
-        self.name = name
+    def __init__(self, pat_name="", age="", pid="", disease="", gender=""):
+        self.pat_name = pat_name
         self.age = age
         self.pid = pid
         self.disease = disease
         self.gender = gender
     #patient name
-    def get_name(self):
-        return self.name
-    def set_name(self, new_name):
-        self.name = new_name
+    def get_pat_name(self):
+        return self.pat_name
+    def set_name(self, new_pat_name):
+        self.pat_name = new_pat_name
         
     #patient age
     def get_age(self):
@@ -103,7 +103,7 @@ class Patient:
 
     #returns the patient objects as a formatted string
     def __str__(self):
-        return f"Name: {self.name}, Age: {self.age}, Patient ID: {self.pid}, Disease: {self.disease}, Gender:{self.gender}"
+        return f"Name: {self.pat_name}, Age: {self.age}, Patient ID: {self.pid}, Disease: {self.disease}, Gender:{self.gender}"
     
 
 #chloe
@@ -119,15 +119,15 @@ class PatientManager:
     #class to format patient object info to match the infor from the patients.txt file
     def format_patient_infor_for_file(self, patient):
         #underscores to separate properties instead of commas
-        return f"{patient.name}_{patient.age}_{patient.pid}_{patient.disease}_{patient.gender}"
+        return f"{patient.pat_name}_{patient.age}_{patient.pid}_{patient.disease}_{patient.gender}"
     def enter_patient_info():
         pass
     
     def read_patients_file(self):
         with open("patients.txt", "r") as patient_data:
             for line in patient_data:
-                name, age, pid, disease, gender = line.split(",")
-                patient = Patient(name, age, pid, disease, gender)
+                pat_name, age, pid, disease, gender = line.split(",")
+                patient = Patient(pat_name, age, pid, disease, gender)
                 self.patient_list.append(patient)
 
     def search_patient_by_id():
