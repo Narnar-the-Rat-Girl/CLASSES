@@ -108,7 +108,38 @@ class Patient:
 
 #chloe
 class PatientManager:
-    pass
+    def __init__(self):
+        self.patient_list = []
+
+        self.read_patients_file()
+    
+    def enter_patient_info():
+        pass
+    
+    def read_patients_file(self):
+        with open("patients.txt", "r") as patient_data:
+            for line in patient_data:
+                name, age, pid, disease, gender = line.split(",")
+                patient = Patient(name, age, pid, disease, gender)
+                self.patient_list.append(patient)
+
+    def search_patient_by_id():
+        pass
+
+    def display_patient_info():
+        pass
+
+    def edit_patient_info_by_id():
+        pass
+
+    def display_patients_list():
+        pass
+
+    def write_list_of_patients_to_file():
+        pass
+
+    def add_patient_to_file():
+        pass
 
 
 class Management:
