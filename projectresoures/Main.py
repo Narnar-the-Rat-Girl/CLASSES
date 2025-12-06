@@ -117,7 +117,7 @@ class PatientManager:
         self.read_patients_file()
         
     #class to format patient object info to match the infor from the patients.txt file
-    def format_patient_infor_for_file(self, patient):
+    def format_patient_info_for_file(self, patient):
         #underscores to separate properties instead of commas
         return f"{patient.pat_name}_{patient.age}_{patient.pid}_{patient.disease}_{patient.gender}"
     def enter_patient_info():
