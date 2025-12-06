@@ -107,16 +107,17 @@ class PatientManager:
 
 # Nikki
 class Management:
-    def display_menu(self):
+    def display_menu():
         print("Welcome to Alberta Hospital (AH) Managment system\nSelect from the following options, or select 3 to stop:\n1 - 	Doctors\n2 - 	Patients\n3 -	Exit Program  ")
         menu1=int(input(">>> "))
         if menu1 == 1:
-            self.doctors_menu()
+            Management.doctors_menu()
         if menu1 == 2:
-            pass
+            Management.patients_menu()
         if menu1 == 3:
+            print("Thanks for using the program. Bye!")
             quit()
-    def doctors_menu(self):
+    def doctors_menu():
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
@@ -130,8 +131,20 @@ class Management:
         if menu2 == 5:
             pass
         if menu2 == 6:
-            Management.display_menu
-            
+            Management.display_menu()
+    def patients_menu()
+        print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
+        menu3=int(input(">>> "))
+        if menu3 == 1:
+            pass
+        if menu3 == 2:
+            pass
+        if menu3 == 3:
+            pass
+        if menu3 == 4:
+            pass
+        if menu3 == 5:
+            Management.display_menu()
     pass
 
 
