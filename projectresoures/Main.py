@@ -110,20 +110,33 @@ class Patient:
 #chloe
 class PatientManager:
 
-    #constructor class to make empty patient list
+    #constructor method to make empty patient list
     #calls read_patients_file() to get patient data from patients.txt file
     def __init__(self):
         self.patient_list = []
 
         self.read_patients_file()
         
-    #class to format patient object info to match the infor from the patients.txt file
+    #method to format patient object info to match the infor from the patients.txt file
     def format_patient_info_for_file(self, patient):
         #underscores to separate properties instead of commas
         return f"{patient.pid}_{patient.pat_name}_{patient.disease}_{patient.gender}_{patient.age}"
-    def enter_patient_info():
-        pass
-    
+        
+    #method for user to add patient info
+    def enter_patient_info(self):
+        print("Enter Patient Information")
+
+        #gets the patient info from user
+        pid = input("Enter Patient ID: ")
+        pat_name = input("Enter Patient Name: ")
+        disease = input("Enter Patient Disease: ")
+        gender = input("Enter Patient Gender: ")
+        age = input("Enter Patient Age: ")
+
+        new_patient = Patient(pid, pat_name, disease, gender, age)
+        return new_patient
+
+    #
     def read_patients_file(self):
         with open("patients.txt", "r") as patient_data:
             for line in patient_data:
