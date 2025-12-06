@@ -58,7 +58,7 @@ class Doctor:
         pass
 
 
-# ashley
+# ashley & Nikki
 class DoctorManager:
     pass
 
@@ -105,13 +105,38 @@ class Patient:
 class PatientManager:
     pass
 
-
+# Nikki
 class Management:
+    def display_menu(self):
+        print("Welcome to Alberta Hospital (AH) Managment system\nSelect from the following options, or select 3 to stop:\n1 - 	Doctors\n2 - 	Patients\n3 -	Exit Program  ")
+        menu1=int(input(">>> "))
+        if menu1 == 1:
+            self.doctors_menu()
+        if menu1 == 2:
+            pass
+        if menu1 == 3:
+            quit()
+    def doctors_menu(self):
+        print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
+        menu2=int(input(">>> "))
+        if menu2 == 1:
+            pass
+        if menu2 == 2:
+            pass
+        if menu2 == 3:
+            pass
+        if menu2 == 4:
+            pass
+        if menu2 == 5:
+            pass
+        if menu2 == 6:
+            Management.display_menu
+            
     pass
 
 
 # class 1 and 2 ashely
-# class 3
+# class 3 
 # class 4
 
 
@@ -119,3 +144,5 @@ if __name__ == "__main__":
     print("starting")
     test = Doctor(name="test")
     print(test.name)
+    Management.display_menu()
+
