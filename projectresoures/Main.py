@@ -56,7 +56,7 @@ class Doctor:
     
     
     #TODO __str__()
-    def __str__():
+    def __str__(self):
         pass
 
 
@@ -106,7 +106,7 @@ class Patient:
 
     #returns the patient objects as a formatted string
     def __str__(self):
-        return f"Name: Patient ID: {self.pid}, {self.pat_name}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
+        return f"Name: {self.pat_name}, Patient ID: {self.pid}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
     
 
 #chloe
@@ -198,8 +198,11 @@ class Management:
         menu3=int(input(">>> "))
         if menu3 == 1:
             print("ID   Name		    Disease	    Gender	    Age")
+            PatientManager.read_patients_file
+            self.patients_menu
         if menu3 == 2:
             print("ID   Name		    Disease	    Gender	    Age")
+            
         if menu3 == 3:
             pass
         if menu3 == 4:
