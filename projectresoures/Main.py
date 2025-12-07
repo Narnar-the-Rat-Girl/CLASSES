@@ -207,8 +207,23 @@ class PatientManager:
                 except ValueError as e:
                     print(f"Skipping malformed line: {line}- Error: {e}")
 
+    #method that seaches for a patient using a patient id entered by the user
     def search_patient_by_id(self):
-        pass
+        #asks the user to enter the patient id
+        search_pid = input("Enter the Patient ID: ")
+
+        #loop to look through the list to check if there is a patient with a matching id
+        for patient in self.patient_list:
+            #uses get() to search through patient list
+            #if there is a matching pid, displays patient info
+            if patient.get_pid() == search_pid:
+                #displays the patient info
+                print(patient)
+                break
+
+        #if the patient id is not found, displays this instead
+        else:
+            print("Can't find the Patient with the same ID in the system")
 
     def display_patient_info(self):
         pass
