@@ -1,4 +1,6 @@
 # Ashley
+
+
 class Doctor:
     def __init__(
         self,
@@ -107,17 +109,19 @@ class PatientManager:
 
 # Nikki
 class Management:
-    def display_menu():
+    def __innit__(self):
+        pass
+    def display_menu(self):
         print("Welcome to Alberta Hospital (AH) Managment system\nSelect from the following options, or select 3 to stop:\n1 - 	Doctors\n2 - 	Patients\n3 -	Exit Program  ")
         menu1=int(input(">>> "))
         if menu1 == 1:
-            Management.doctors_menu()
+            self.doctors_menu()
         if menu1 == 2:
-            Management.patients_menu()
+            self.patients_menu()
         if menu1 == 3:
             print("Thanks for using the program. Bye!")
             quit()
-    def doctors_menu():
+    def doctors_menu(self):
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
@@ -131,8 +135,8 @@ class Management:
         if menu2 == 5:
             pass
         if menu2 == 6:
-            Management.display_menu()
-    def patients_menu():
+            self.display_menu()
+    def patients_menu(self):
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
         if menu3 == 1:
@@ -144,18 +148,14 @@ class Management:
         if menu3 == 4:
             pass
         if menu3 == 5:
-            Management.display_menu()
+            self.display_menu()
     pass
 
-
-# class 1 and 2 ashely
-# class 3 
-# class 4
-
+menu = Management()
 
 if __name__ == "__main__":
     print("starting")
     test = Doctor(name="test")
     print(test.name)
-    Management.display_menu()
+    menu.display_menu()
 
