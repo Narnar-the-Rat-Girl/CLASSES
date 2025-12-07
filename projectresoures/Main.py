@@ -64,7 +64,7 @@ class DoctorManager:
     #method to format patient object info to match the infor from the doctors.txt file
     def format_doctor_info_for_file(self, doctor):
         #underscores to separate properties instead of commas
-        return f"{doctor.doc_id}_{doctor.name}_{doctor.working_time}_{doctor.specialization}_{doctor.room}_{doctor.room_num}"
+        return f"{doctor.doc_id}_{doctor.name}_{doctor.specialization}_{doctor.working_time}_{doctor.qualification}_{doctor.room_num}"
         
     #method for user to add patient info
     def enter_doctor_info(self):
@@ -76,8 +76,9 @@ class DoctorManager:
         working_time = input("Enter Doctor Timing Disease: ")
         specialization = input("Enter Doctor Specialization ")
         room_num = input("Enter Doctor Room Number: ")
+        qualification = input("Enter Doctor qualification: ")
 
-        new_doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
+        new_doctor = Doctor(doc_id, doctor_name, specialization, working_time, qualification, room_num)
         return new_doctor
 
     #
@@ -85,8 +86,8 @@ class DoctorManager:
         with open("doctors.txt", "r") as doctor_data:
             for line in doctor_data:
                 try:
-                    doc_id, doctor_name, working_time, specialization, room_num = line.split("_")
-                    doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
+                    doc_id, doctor_name, specialization, working_time, qualification, room_num = line.split("_")
+                    doctor = Doctor(doc_id, doctor_name, specialization, working_time, qualification, room_num)
                     self.doctor_list.append(doctor)
                 except ValueError as e:
                     print(f"Skipping malformed line: {line}- Error: {e}")
