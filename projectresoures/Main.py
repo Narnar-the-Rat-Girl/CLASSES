@@ -9,7 +9,7 @@ class Doctor:
         specialization="",
         working_time="",
         qualification="",
-        room_num="",
+        room_num= "",
     ):
         self.doc_id = doc_id
         self.name = name
@@ -54,15 +54,68 @@ class Doctor:
     def set_room_num(self, new_room_num):
         self.room_num = new_room_num
     
-    
-    #TODO __str__()
-    def __str__(self):
-        pass
 
 
 # ashley & Nikki
 class DoctorManager:
-    pass
+    def __init__(self):
+        self.doctor_list = []
+
+        self.read_doctors_file()
+        
+    #method to format patient object info to match the infor from the doctors.txt file
+    def format_doctor_info_for_file(self, doctor):
+        #underscores to separate properties instead of commas
+        return f"{doctor.doc_id}_{doctor.name}_{doctor.working_time}_{doctor.specialization}_{doctor.room}_{doctor.room_num}"
+        
+    #method for user to add patient info
+    def enter_doctor_info(self):
+        print("Enter Doctor Information")
+
+        #gets the patient info from user
+        doc_id = input("Enter Doctor ID: ")
+        doctor_name = input("Enter Doctor Name: ")
+        working_time = input("Enter Doctor Timing Disease: ")
+        specialization = input("Enter Doctor Specialization ")
+        room_num = input("Enter Doctor Room Number: ")
+
+        new_doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
+        return new_doctor
+
+    #
+    def read_doctors_file(self):
+        with open("doctors.txt", "r") as doctor_data:
+            for line in doctor_data:
+                doc_id, doctor_name, working_time, specialization, room_num = line.split(",")
+                doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
+                self.doctor_list.append(doctor)
+
+    def search_doctor_by_id(self):
+        pass
+
+    def search_doctor_by_name(self):
+        pass
+
+    def display_doctor_info(self):
+        pass
+
+    def edit_doctor_info(self):
+        pass
+
+    def write_list_of_doctors_to_file(self):
+        pass
+
+    def add_dr_to_file(self):
+        pass
+
+
+
+
+
+
+
+
+
 
 #chloe
 class Patient:
