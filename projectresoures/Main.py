@@ -204,7 +204,6 @@ class PatientManager:
                     pid, pat_name, disease, gender, age = line.split('_')
                     patient = Patient(pid, pat_name, disease, gender, age)
                     self.patient_list.append(patient)
-                    print(patient)
                 except ValueError as e:
                     print(f"Skipping malformed line: {line}- Error: {e}")
 
