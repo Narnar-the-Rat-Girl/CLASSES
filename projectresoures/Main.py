@@ -1,6 +1,9 @@
 # Ashley
 
 
+from ast import match_case
+
+
 class Doctor:
     def __init__(
         self,
@@ -199,22 +202,22 @@ class PatientManager:
                 patient = Patient(pid, pat_name, disease, gender, age)
                 self.patient_list.append(patient)
 
-    def search_patient_by_id():
+    def search_patient_by_id(self):
         pass
 
-    def display_patient_info():
+    def display_patient_info(self):
         pass
 
-    def edit_patient_info_by_id():
+    def edit_patient_info_by_id(self):
         pass
 
-    def display_patients_list():
+    def display_patients_list(self):
         pass
 
-    def write_list_of_patients_to_file():
+    def write_list_of_patients_to_file(self):
         pass
 
-    def add_patient_to_file():
+    def add_patient_to_file(self):
         pass
 
 # Nikki
@@ -236,14 +239,16 @@ class Management:
         menu2=int(input(">>> "))
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
+            DoctorManager.read_doctors_file
+            self.doctors_menu
         if menu2 == 2:
-            pass
+            DoctorManager.search_doctor_by_id
         if menu2 == 3:
-            pass
+            DoctorManager.search_doctor_by_name
         if menu2 == 4:
-            pass
+            DoctorManager.enter_doctor_info
         if menu2 == 5:
-            pass
+            DoctorManager.edit_doctor_info
         if menu2 == 6:
             self.display_menu()
     def patients_menu(self):
@@ -255,11 +260,11 @@ class Management:
             self.patients_menu
         if menu3 == 2:
             print("ID   Name		    Disease	    Gender	    Age")
-            
+            PatientManager.search_patient_by_id
         if menu3 == 3:
-            pass
+            PatientManager.enter_patient_info
         if menu3 == 4:
-            pass
+            PatientManager.edit_patient_info_by_id
         if menu3 == 5:
             self.display_menu()
     pass
