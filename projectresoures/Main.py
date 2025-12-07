@@ -1,8 +1,4 @@
 # Ashley
-
-
-
-
 class Doctor:
     def __init__(
         self,
@@ -88,9 +84,12 @@ class DoctorManager:
     def read_doctors_file(self):
         with open("doctors.txt", "r") as doctor_data:
             for line in doctor_data:
-                doc_id, doctor_name, working_time, specialization, room_num = line.split(",")
-                doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
-                self.doctor_list.append(doctor)
+                try:
+                    doc_id, doctor_name, working_time, specialization, room_num = line.split("_")
+                    doctor = Doctor(doc_id, doctor_name, working_time, specialization, room_num)
+                    self.doctor_list.append(doctor)
+                except ValueError as e:
+                    print(f"Skipping malformed line: {line}- Error: {e}")
 
     def search_doctor_by_id(self):
         pass
@@ -190,16 +189,19 @@ class PatientManager:
         gender = input("Enter Patient Gender: ")
         age = input("Enter Patient Age: ")
 
-        new_patient = Patient(pid, pat_name, disease, gender, age)
+        new_patient = Patient(pid , pat_name , disease , gender , age)
         return new_patient
 
     #
     def read_patients_file(self):
         with open("patients.txt", "r") as patient_data:
             for line in patient_data:
-                pid, pat_name, disease, gender, age = line.split(",")
-                patient = Patient(pid, pat_name, disease, gender, age)
-                self.patient_list.append(patient)
+                try:
+                    pid, pat_name, disease, gender, age = line.split('_')
+                    patient = Patient(pid, pat_name, disease, gender, age)
+                    self.patient_list.append(patient)
+                except ValueError as e:
+                    print(f"Skipping malformed line: {line}- Error: {e}")
 
     def search_patient_by_id(self):
         pass
