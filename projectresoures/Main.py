@@ -1,7 +1,6 @@
 # Ashley
 
 
-from ast import match_case
 
 
 class Doctor:
@@ -172,7 +171,7 @@ class PatientManager:
     #calls read_patients_file() to get patient data from patients.txt file
     def __init__(self):
         self.patient_list = []
-
+        
         self.read_patients_file()
         
     #method to format patient object info to match the infor from the patients.txt file
@@ -220,6 +219,9 @@ class PatientManager:
     def add_patient_to_file(self):
         pass
 
+pm = PatientManager()
+dm = DoctorManager()
+
 # Nikki
 class Management:
     def __innit__(self):
@@ -239,16 +241,16 @@ class Management:
         menu2=int(input(">>> "))
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
-            DoctorManager.read_doctors_file
+            dm.read_doctors_file
             self.doctors_menu
         if menu2 == 2:
-            DoctorManager.search_doctor_by_id
+            dm.search_doctor_by_id
         if menu2 == 3:
-            DoctorManager.search_doctor_by_name
+            dm.search_doctor_by_name
         if menu2 == 4:
-            DoctorManager.enter_doctor_info
+            dm.enter_doctor_info
         if menu2 == 5:
-            DoctorManager.edit_doctor_info
+            dm.edit_doctor_info
         if menu2 == 6:
             self.display_menu()
     def patients_menu(self):
@@ -256,20 +258,22 @@ class Management:
         menu3=int(input(">>> "))
         if menu3 == 1:
             print("ID   Name		    Disease	    Gender	    Age")
-            PatientManager.read_patients_file
+            pm.read_patients_file
             self.patients_menu
         if menu3 == 2:
             print("ID   Name		    Disease	    Gender	    Age")
-            PatientManager.search_patient_by_id
+            pm.search_patient_by_id
         if menu3 == 3:
-            PatientManager.enter_patient_info
+            pm.enter_patient_info
         if menu3 == 4:
-            PatientManager.edit_patient_info_by_id
+            pm.edit_patient_info_by_id
         if menu3 == 5:
             self.display_menu()
     pass
 
 menu = Management()
+
+
 
 if __name__ == "__main__":
     print("starting")
