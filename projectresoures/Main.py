@@ -1,4 +1,6 @@
 # Ashley
+
+
 class Doctor:
     def __init__(
         self,
@@ -58,7 +60,7 @@ class Doctor:
         pass
 
 
-# ashley
+# ashley & Nikki
 class DoctorManager:
     pass
 
@@ -162,17 +164,55 @@ class PatientManager:
     def add_patient_to_file():
         pass
 
-
+# Nikki
 class Management:
+    def __innit__(self):
+        pass
+    def display_menu(self):
+        print("Welcome to Alberta Hospital (AH) Managment system\nSelect from the following options, or select 3 to stop:\n1 - 	Doctors\n2 - 	Patients\n3 -	Exit Program  ")
+        menu1=int(input(">>> "))
+        if menu1 == 1:
+            self.doctors_menu()
+        if menu1 == 2:
+            self.patients_menu()
+        if menu1 == 3:
+            print("Thanks for using the program. Bye!")
+            quit()
+    def doctors_menu(self):
+        print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
+        menu2=int(input(">>> "))
+        if menu2 == 1:
+            print("Id   Name                   Speciality      Timing          Qualification   Room Number")
+        if menu2 == 2:
+            pass
+        if menu2 == 3:
+            pass
+        if menu2 == 4:
+            pass
+        if menu2 == 5:
+            pass
+        if menu2 == 6:
+            self.display_menu()
+    def patients_menu(self):
+        print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
+        menu3=int(input(">>> "))
+        if menu3 == 1:
+            print("ID   Name		    Disease	    Gender	    Age")
+        if menu3 == 2:
+            print("ID   Name		    Disease	    Gender	    Age")
+        if menu3 == 3:
+            pass
+        if menu3 == 4:
+            pass
+        if menu3 == 5:
+            self.display_menu()
     pass
 
-
-# class 1 and 2 ashely
-# class 3
-# class 4
-
+menu = Management()
 
 if __name__ == "__main__":
     print("starting")
     test = Doctor(name="test")
     print(test.name)
+    menu.display_menu()
+
