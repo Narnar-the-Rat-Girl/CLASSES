@@ -125,7 +125,7 @@ class Management:
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
-            pass
+            print("Id   Name                   Speciality      Timing          Qualification   Room Number")
         if menu2 == 2:
             pass
         if menu2 == 3:
@@ -140,9 +140,9 @@ class Management:
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
         if menu3 == 1:
-            pass
+            print("ID   Name		    Disease	    Gender	    Age")
         if menu3 == 2:
-            pass
+            print("ID   Name		    Disease	    Gender	    Age")
         if menu3 == 3:
             pass
         if menu3 == 4:
