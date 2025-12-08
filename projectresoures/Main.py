@@ -115,11 +115,41 @@ class DoctorManager:
     def search_doctor_by_name(self):
         pass
 
-    def display_doctor_info(self):
-        pass
+    def display_doctor_info(self, doctor):
+        print(doctor)
 
     def edit_doctor_info(self):
-        pass
+        # doc_id, doctor_name, specialization, working_time, qualification, room_num
+        #asks user to input the doctor id
+        find_doctor = input("Please enter the ID of the Doctor you want to edit their information: ")
+
+        #loop to look through the list to check if there is a doctor with a matching id
+        for doctor in self.doctor_list:
+            #uses get() to search through doctor list
+            #if there is a matching docid, allows user to change the doctor info
+            if doctor.get_doc_id() == find_doctor:
+                #gets the new doctor information from the user
+                new_doctor_name = input("Enter new Name: ")
+                new_specialization = input("Enter new Specialization: ")
+                new_working_time = input("Enter new Working Time: ")
+                new_qualification = input("Enter new Qualification: ")
+                new_room_num = input("Enter new Room Num: ")
+
+                #updates the doctor object with the new values
+                doctor.set_doctor_name(new_doctor_name)
+                doctor.set_specialization(new_specialization)
+                doctor.set_working_time(new_working_time)
+                doctor.set_qualification(new_qualification)
+                doctor.set_room_num(new_room_num)
+
+                #writes the updated doctor information in the doctor.txt file
+                with open("doctors.txt", "w") as data:
+                    for doctor_data in self.doctor_list:
+                        data.write(self.format_doctor_info_for_file(doctor_data))
+                return
+        
+        #displays this if the doctor id does not exist in the system
+        print("Can't find the Doctor with the same ID in the system")
     
     
     def display_doctors_list(self):
