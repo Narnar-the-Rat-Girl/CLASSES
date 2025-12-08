@@ -350,19 +350,19 @@ class Management:
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
-            dm.display_doctors_list
+            dm.display_doctors_list()
             input()
             self.doctors_menu()
         if menu2 == 2:
-            dm.search_doctor_by_id
+            dm.search_doctor_by_id()
             input()
             self.doctors_menu()
         if menu2 == 3:
-            dm.search_doctor_by_name
+            dm.search_doctor_by_name()
             input()
             self.doctors_menu()
         if menu2 == 4:
-            dm.enter_doctor_info
+            dm.enter_doctor_info()
             input()
             self.doctors_menu()
         if menu2 == 5:
