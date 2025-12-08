@@ -172,18 +172,13 @@ class DoctorManager:
         pass
 
     def add_dr_to_file(self):
-        print("Enter Doctor Information")
-
-        #gets the patient info from user
-        doc_id = input("Enter Doctor ID: ")
-        doctor_name = input("Enter Doctor Name: ")
-        specialization = input("Enter Doctor Specialization: ")
-        working_time = input("Enter Working Time: ")
-        qualification = input("Enter Qualifications: ")
-        room_num = input("Enter Room Number: ")
-
-        new_doctor = Doctor(doc_id , doctor_name , specialization , working_time , qualification, room_num)
-        return new_doctor
+        #opens the doctors.txt file in write mode and appends doctor
+        with open("doctors.txt", "w") as data:
+            for doctor_data in self.doctor_list:
+                #calls the format_patient_info_for_file() method to format the patient list in the correct format
+                format_doc_info = self.format_doctor_info_for_file(doctor_data)
+                #writes the list in the patients.txt file
+                data.write(format_doc_info + "\n")
 
 
 #chloe
