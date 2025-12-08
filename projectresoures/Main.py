@@ -163,7 +163,7 @@ class DoctorManager:
     
     
     def display_doctors_list(self):
-        #loop to keep displaying the patients until all the patients in the list have been displayed
+        #loop to keep displaying the doctors until all the doctors in the list have been displayed
         for doctor in self.doctor_list:
             print(doctor) 
     
@@ -184,13 +184,6 @@ class DoctorManager:
 
         new_doctor = Doctor(doc_id , doctor_name , specialization , working_time , qualification, room_num)
         return new_doctor
-
-
-
-
-
-
-
 
 
 #chloe
