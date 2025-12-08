@@ -122,7 +122,7 @@ class DoctorManager:
         pass
     
     
-    def display_doctors_list(self);
+    def display_doctors_list(self):
         pass
     
 
