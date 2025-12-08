@@ -375,7 +375,7 @@ class Management:
         menu2=int(input(">>> "))
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
-            dm.doctor_list
+            print(dm.doctor_list)
             self.doctors_menu
         if menu2 == 2:
             dm.search_doctor_by_id()
