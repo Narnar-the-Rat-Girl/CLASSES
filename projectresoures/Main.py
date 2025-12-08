@@ -341,8 +341,15 @@ class PatientManager:
         for patient in self.patient_list:
             print(patient)
 
+    #method that writes the list of patients into patients.txt file
     def write_list_of_patients_to_file(self):
-        pass
+        #opens the patients.txt file in write mode so I can add more stuff to it
+        with open("patients.txt", "w") as data:
+            for patient_data in self.patient_list:
+                #calls the format_patient_info_for_file() method to format the patient list in the correct format
+                format_pat_info = self.format_patient_info_for_file(patient_data)
+                #writes the list in the patients.txt file
+                data.write(format_pat_info + "\n")
 
     def add_patient_to_file(self):
         pass
