@@ -165,7 +165,7 @@ class DoctorManager:
     def display_doctors_list(self):
         #loop to keep displaying the doctors until all the doctors in the list have been displayed
         for doctor in self.doctor_list:
-            print(doctor) 
+            print(f"{doctor.name}") 
     
 
     def write_list_of_doctors_to_file(self):
@@ -375,7 +375,7 @@ class Management:
         menu2=int(input(">>> "))
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
-            print(dm.doctor_list)
+            dm.display_doctors_list
             self.doctors_menu
         if menu2 == 2:
             dm.search_doctor_by_id()
