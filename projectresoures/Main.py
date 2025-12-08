@@ -172,7 +172,7 @@ class DoctorManager:
         pass
 
     def add_dr_to_file(self):
-        #opens the patients.txt file in write mode so I can add more stuff to it
+        #opens the doctors.txt file in write mode and appends doctor
         with open("doctors.txt", "w") as data:
             for doctor_data in self.doctor_list:
                 #calls the format_patient_info_for_file() method to format the patient list in the correct format
