@@ -149,7 +149,7 @@ class DoctorManager:
                 new_room_num = input("Enter new Room Num: ")
 
                 #updates the doctor object with the new values
-                doctor.set_doctor_name(new_doctor_name)
+                doctor.set_name(new_doctor_name)
                 doctor.set_specialization(new_specialization)
                 doctor.set_working_time(new_working_time)
                 doctor.set_qualification(new_qualification)
