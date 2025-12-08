@@ -320,8 +320,11 @@ class PatientManager:
         #displays this if the patient id does not exist in the system
         print("Can't find the Patient with the same ID in the system")
 
+    #method to display the full list of patients in the patient list
     def display_patients_list(self):
-        pass
+        #loop to keep displaying the patients until all the patients in the list have been displayed
+        for patient in self.patient_list:
+            print(patient)
 
     def write_list_of_patients_to_file(self):
         pass
