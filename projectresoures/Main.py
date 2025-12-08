@@ -53,6 +53,9 @@ class Doctor:
 
     def set_room_num(self, new_room_num):
         self.room_num = new_room_num
+
+    def __str__(self):
+        return f"ID: {self.doc_id}, {self.name}, {self.specialization}, {self.working_time}, {self.qualification}, {self.room_num}"
     
 
 
@@ -165,7 +168,7 @@ class DoctorManager:
     def display_doctors_list(self):
         #loop to keep displaying the doctors until all the doctors in the list have been displayed
         for doctor in self.doctor_list:
-            print(f"{doctor.name}") 
+            print(doctor) 
     
 
     def write_list_of_doctors_to_file(self):
@@ -376,6 +379,7 @@ class Management:
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
             dm.display_doctors_list
+            input()
             self.doctors_menu
         if menu2 == 2:
             dm.search_doctor_by_id()
@@ -402,7 +406,7 @@ class Management:
         menu3=int(input(">>> "))
         if menu3 == 1:
             print("ID   Name		    Disease	    Gender	    Age")
-            pm.read_patients_file()
+            pm.display_patients_list()
             input()
             self.patients_menu()
         if menu3 == 2:
