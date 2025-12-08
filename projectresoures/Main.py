@@ -1,5 +1,4 @@
 # Ashley
-from turtle import pen
 
 
 class Doctor:
@@ -164,15 +163,27 @@ class DoctorManager:
     
     
     def display_doctors_list(self):
-        pass
+        #loop to keep displaying the patients until all the patients in the list have been displayed
+        for doctor in self.doctor_list:
+            print(doctor) 
     
 
     def write_list_of_doctors_to_file(self):
         pass
 
     def add_dr_to_file(self):
-        pass
+        print("Enter Doctor Information")
 
+        #gets the patient info from user
+        doc_id = input("Enter Doctor ID: ")
+        doctor_name = input("Enter Doctor Name: ")
+        specialization = input("Enter Doctor Specialization: ")
+        working_time = input("Enter Working Time: ")
+        qualification = input("Enter Qualifications: ")
+        room_num = input("Enter Room Number: ")
+
+        new_doctor = Doctor(doc_id , doctor_name , specialization , working_time , qualification, room_num)
+        return new_doctor
 
 
 
@@ -367,7 +378,7 @@ class Management:
         menu2=int(input(">>> "))
         if menu2 == 1:
             print("Id   Name                   Speciality      Timing          Qualification   Room Number")
-            dm.read_doctors_file
+            dm.doctor_list
             self.doctors_menu
         if menu2 == 2:
             dm.search_doctor_by_id
