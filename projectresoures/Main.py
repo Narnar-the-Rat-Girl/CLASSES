@@ -217,16 +217,17 @@ class PatientManager:
             #uses get() to search through patient list
             #if there is a matching pid, displays patient info
             if patient.get_pid() == search_pid:
-                #displays the patient info
-                print(patient)
+                #calls the display_patient_info method to display the patient info
+                self.display_patient_info(patient)
                 break
 
         #if the patient id is not found, displays this instead
         else:
             print("Can't find the Patient with the same ID in the system")
 
-    def display_patient_info(self):
-        pass
+    #method that displays patient information
+    def display_patient_info(self, patient):
+        print(patient)
 
     def edit_patient_info_by_id(self):
         pass
