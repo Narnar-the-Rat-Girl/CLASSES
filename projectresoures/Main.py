@@ -113,7 +113,18 @@ class DoctorManager:
 
 
     def search_doctor_by_name(self):
-        pass
+        search_doc_name = input("Enter the Doctor ID: ")
+
+        for doctor in self.doctor_list:
+
+            if doctor.get_name() == search_doc_name:
+                print(doctor)
+                break
+
+
+        else:
+            print("Can't find the Doctor with the same name in the system")
+            pass
 
     def display_doctor_info(self, doctor):
         print(doctor)
