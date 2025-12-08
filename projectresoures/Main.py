@@ -371,22 +371,27 @@ class Management:
             self.doctors_menu()
         if menu2 == 6:
             self.display_menu()
-            input()
-            self.doctors_menu()
     def patients_menu(self):
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
         if menu3 == 1:
             print("ID   Name		    Disease	    Gender	    Age")
-            pm.read_patients_file
-            self.patients_menu
+            pm.read_patients_file()
+            input()
+            self.patients_menu()
         if menu3 == 2:
             print("ID   Name		    Disease	    Gender	    Age")
-            pm.search_patient_by_id
+            pm.search_patient_by_id()
+            input()
+            self.patients_menu()
         if menu3 == 3:
-            pm.enter_patient_info
+            pm.enter_patient_info()
+            input()
+            self.patients_menu()
         if menu3 == 4:
-            pm.edit_patient_info_by_id
+            pm.edit_patient_info_by_id()
+            input()
+            self.patients_menu()
         if menu3 == 5:
             self.display_menu()
     pass
@@ -397,7 +402,5 @@ menu = Management()
 
 if __name__ == "__main__":
     print("starting")
-    test = Doctor(name="test")
-    print(test.name)
     menu.display_menu()
 
