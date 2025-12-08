@@ -76,7 +76,7 @@ class DoctorManager:
         #gets the patient info from user
         doc_id = input("Enter Doctor ID: ")
         doctor_name = input("Enter Doctor Name: ")
-        working_time = input("Enter Doctor Timing Disease: ")
+        working_time = input("Enter Doctor Timing: ")
         specialization = input("Enter Doctor Specialization ")
         room_num = input("Enter Doctor Room Number: ")
         qualification = input("Enter Doctor qualification: ")
@@ -336,6 +336,7 @@ dm = DoctorManager()
 class Management:
     def __innit__(self):
         pass
+    # Main Menu
     def display_menu(self):
         print("Welcome to Alberta Hospital (AH) Managment system\nSelect from the following options, or select 3 to stop:\n1 - 	Doctors\n2 - 	Patients\n3 -	Exit Program  ")
         menu1=int(input(">>> "))
@@ -346,33 +347,26 @@ class Management:
         if menu1 == 3:
             print("Thanks for using the program. Bye!")
             quit()
+    # function for doctor menu options
     def doctors_menu(self):
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
-            dm.display_doctors_list()
-            input()
-            self.doctors_menu()
+            print("Id   Name                   Speciality      Timing          Qualification   Room Number")
+            dm.read_doctors_file
+            self.doctors_menu
         if menu2 == 2:
-            dm.search_doctor_by_id()
-            input()
-            self.doctors_menu()
+            dm.search_doctor_by_id
         if menu2 == 3:
-            dm.search_doctor_by_name()
-            input()
-            self.doctors_menu()
+            dm.search_doctor_by_name
         if menu2 == 4:
-            dm.enter_doctor_info()
-            input()
-            self.doctors_menu()
+            dm.enter_doctor_info
         if menu2 == 5:
             dm.edit_doctor_info
-            input()
-            self.doctors_menu()
         if menu2 == 6:
             self.display_menu()
-            input()
-            self.doctors_menu()
+
+    # Function for patient menu options
     def patients_menu(self):
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
