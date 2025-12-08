@@ -375,12 +375,20 @@ class Management:
             self.doctors_menu
         if menu2 == 2:
             dm.search_doctor_by_id
+            input()
+            self.doctors_menu
         if menu2 == 3:
             dm.search_doctor_by_name
+            input()
+            self.doctors_menu
         if menu2 == 4:
             dm.enter_doctor_info
+            input()
+            self.doctors_menu
         if menu2 == 5:
             dm.edit_doctor_info
+            input()
+            self.doctors_menu
         if menu2 == 6:
             self.display_menu()
 
