@@ -94,9 +94,23 @@ class DoctorManager:
                     self.doctor_list.append(doctor)
                 except ValueError as e:
                     print(f"Skipping malformed line: {line}- Error: {e}")
+                    
+
 
     def search_doctor_by_id(self):
-        pass
+
+        search_doc_id = input("Enter the Doctor ID: ")
+
+        for doctor in self.doctor_list:
+
+            if doctor.get_doc_id() == search_doc_id:
+                print(doctor)
+                break
+
+
+        else:
+            print("Can't find the Doctor with the same ID in the system")
+
 
     def search_doctor_by_name(self):
         pass
@@ -106,6 +120,10 @@ class DoctorManager:
 
     def edit_doctor_info(self):
         pass
+    
+    #
+    #display_doctors_list
+    #
 
     def write_list_of_doctors_to_file(self):
         pass
