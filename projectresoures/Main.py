@@ -183,6 +183,7 @@ class DoctorManager:
 
 
 #chloe
+#this class is to initialize the properties for each patient object and return them as strings
 class Patient:
     #initializes the properties for each patient object
     def __init__(self, pid="", pat_name="", disease="", gender="", age=""):
@@ -193,38 +194,48 @@ class Patient:
         self.age = age
 
     #patient ID
+    #getter
     def get_pid(self):
         return self.pid
+    #setter
     def set_pid(self, new_pid):
         self.pid = new_pid
         
     #patient name
+    #getter
     def get_pat_name(self):
         return self.pat_name
-    def set_name(self, new_pat_name):
+    #setter
+    def set_pat_name(self, new_pat_name):
         self.pat_name = new_pat_name
         
     #patient's disease
+    #getter
     def get_disease(self):
         return self.disease
+    #setter
     def set_disease(self, new_disease):
         self.disease = new_disease
 
     #patient's gender
+    #getter
     def get_gender(self):
         return self.gender
+    #setter
     def set_gender(self, new_gender):
         self.gender = new_gender
 
     #patient age
+    #getter
     def get_age(self):
         return self.age
+    #setter
     def set_age(self, new_age):
         self.age = new_age
 
     #returns the patient objects as a formatted string
     def __str__(self):
-        return f"Name: {self.pat_name}, Patient ID: {self.pid}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
+        return f"Name: Patient ID: {self.pid}, {self.pat_name}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
     
 
 #chloe
