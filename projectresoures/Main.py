@@ -356,6 +356,8 @@ class PatientManager:
 
 pm = PatientManager()
 dm = DoctorManager()
+dm.read_doctors_file()
+pm.read_patients_file()
 
 # Nikki
 class Management:
@@ -381,21 +383,21 @@ class Management:
             dm.doctor_list
             self.doctors_menu
         if menu2 == 2:
-            dm.search_doctor_by_id
+            dm.search_doctor_by_id()
             input()
-            self.doctors_menu
+            self.doctors_menu()
         if menu2 == 3:
-            dm.search_doctor_by_name
+            dm.search_doctor_by_name()
             input()
-            self.doctors_menu
+            self.doctors_menu()
         if menu2 == 4:
-            dm.enter_doctor_info
+            dm.enter_doctor_info()
             input()
-            self.doctors_menu
+            self.doctors_menu()
         if menu2 == 5:
-            dm.edit_doctor_info
+            dm.edit_doctor_info()
             input()
-            self.doctors_menu
+            self.doctors_menu()
         if menu2 == 6:
             self.display_menu()
 
