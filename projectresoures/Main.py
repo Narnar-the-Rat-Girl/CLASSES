@@ -121,9 +121,10 @@ class DoctorManager:
     def edit_doctor_info(self):
         pass
     
-    #
-    #display_doctors_list
-    #
+    
+    def display_doctors_list(self);
+        pass
+    
 
     def write_list_of_doctors_to_file(self):
         pass
