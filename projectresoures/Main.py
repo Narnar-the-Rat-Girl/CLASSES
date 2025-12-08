@@ -229,8 +229,36 @@ class PatientManager:
     def display_patient_info(self, patient):
         print(patient)
 
+    #method that allows the user to edit the information of the patient whose id is specified
     def edit_patient_info_by_id(self):
-        pass
+        #asks user to input the patient id
+        find_patient = input("Please enter the ID of the Patient you want to edit their information: ")
+
+        #loop to look through the list to check if there is a patient with a matching id
+        for patient in self.patient_list:
+            #uses get() to search through patient list
+            #if there is a matching pid, allows user to change the patient info
+            if patient.get_pid() == find_patient:
+                #gets the new patient information from the user
+                new_pat_name = input("Enter new Name: ")
+                new_disease = input("Enter new Disease: ")
+                new_gender = input("Enter new Gender: ")
+                new_age = input("Enter new Age: ")
+
+                #updates the patient object with the new values
+                patient.set_pat_name(new_pat_name)
+                patient.set_disease(new_disease)
+                patient.set_gender(new_gender)
+                patient.set_age(new_age)
+
+                #writes the updated patient information in the patients.txt file
+                with open("patients.txt", "w") as data:
+                    for patient_data in self.patient_list:
+                        data.write(self.format_patient_info_for_file(patient_data))
+                return
+        
+        #displays this if the patient id does not exist in the system
+        print("Can't find the Patient with the same ID in the system")
 
     def display_patients_list(self):
         pass
