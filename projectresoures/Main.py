@@ -267,6 +267,10 @@ class PatientManager:
 
         new_patient = Patient(pid, pat_name, disease, gender, age)
         self.patient_list.append(new_patient)
+        format_pat_info = self.format_patient_info_for_file(new_patient)
+        with open("patients.txt", "a") as data:
+                data.write("\n" + format_pat_info)
+            
 
     #
     def read_patients_file(self):
@@ -421,7 +425,7 @@ class Management:
             input()
             self.patients_menu()
         if menu3 == 3:
-            pm.add_patient_to_file()
+            pm.enter_patient_info()
             input()
             self.patients_menu()
         if menu3 == 4:
