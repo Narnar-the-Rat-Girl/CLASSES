@@ -349,8 +349,19 @@ class PatientManager:
                 #writes the list in the patients.txt file
                 data.write(format_pat_info + "\n")
 
+    #method to add the new patient to the file
     def add_patient_to_file(self):
-        pass
+        #calls enter_patient_info() method to get the inputted info from the user
+        new_patient = self.enter_patient_info()
+        #appends the new patient object to the patient_list
+        self.patient_list.append(new_patient)
+        #formats the new patient object with the format_patient_info_for_file method
+        format_new_pat_info = self.format_patient_info_for_file(new_patient)
+
+        with open("patients.txt", "a") as data:
+            data.write(format_new_pat_info + "\n")
+        
+        print(f"Patient whose ID is " + {new_patient.get_pid()} + " has been added.")
 
 pm = PatientManager()
 dm = DoctorManager()
