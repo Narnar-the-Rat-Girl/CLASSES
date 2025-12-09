@@ -115,7 +115,7 @@ class DoctorManager:
 
 
     def search_doctor_by_name(self):
-        search_doc_name = input("Enter the Doctor ID: ")
+        search_doc_name = input("Enter the Doctor Name: ")
 
         for doctor in self.doctor_list:
 
