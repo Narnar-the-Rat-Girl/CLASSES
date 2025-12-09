@@ -1,6 +1,5 @@
 # Ashley
 
-
 class Doctor:
     def __init__(
         self,
@@ -266,7 +265,7 @@ class PatientManager:
         gender = input("Enter Patient Gender: ")
         age = input("Enter Patient Age: ")
 
-        new_patient = Patient(pid , pat_name , disease , gender , age)
+        new_patient = Patient(pid, pat_name, disease, gender, age)
         self.patient_list.append(new_patient)
 
     #
@@ -359,9 +358,8 @@ class PatientManager:
         format_new_pat_info = self.format_patient_info_for_file(new_patient)
 
         with open("patients.txt", "a") as data:
-            data.write(format_new_pat_info + "\n")
+            data.write(format_new_pat_info)
         
-        print(f"Patient whose ID is " + {new_patient.get_pid()} + " has been added.")
 
 pm = PatientManager()
 dm = DoctorManager()
@@ -423,7 +421,7 @@ class Management:
             input()
             self.patients_menu()
         if menu3 == 3:
-            pm.enter_patient_info()
+            pm.add_patient_to_file()
             input()
             self.patients_menu()
         if menu3 == 4:
