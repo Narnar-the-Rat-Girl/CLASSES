@@ -359,7 +359,7 @@ pm.read_patients_file()
 
 # Nikki
 class Management:
-    def __innit__(self):
+    def __init__(self):
         pass
     # Main Menu
     def display_menu(self):
