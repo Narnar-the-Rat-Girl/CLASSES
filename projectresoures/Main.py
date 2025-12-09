@@ -55,7 +55,7 @@ class Doctor:
         self.room_num = new_room_num
 
     def __str__(self):
-        return f"ID: {self.doc_id}, {self.name}, {self.specialization}, {self.working_time}, {self.qualification}, {self.room_num}"
+        return f"{self.doc_id}, {self.name}, {self.specialization}, {self.working_time}, {self.qualification}, {self.room_num}"
     
 
 
