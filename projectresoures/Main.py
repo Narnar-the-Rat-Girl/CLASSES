@@ -267,7 +267,7 @@ class PatientManager:
         age = input("Enter Patient Age: ")
 
         new_patient = Patient(pid , pat_name , disease , gender , age)
-        return new_patient
+        self.patient_list.append(new_patient)
 
     #
     def read_patients_file(self):
