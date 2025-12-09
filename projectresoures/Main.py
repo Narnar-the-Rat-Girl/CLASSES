@@ -236,10 +236,10 @@ class Patient:
 
     #returns the patient objects as a formatted string
     def __str__(self):
-        return f"Name: Patient ID: {self.pid}, {self.pat_name}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
+        return f"{self.pid}, {self.pat_name}, {self.disease}, {self.gender}, {self.age}"
     
 
-#chloe
+#chloe & Nikki
 class PatientManager:
 
     #constructor method to make empty patient list
