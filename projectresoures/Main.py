@@ -354,8 +354,7 @@ class PatientManager:
 
 pm = PatientManager()
 dm = DoctorManager()
-dm.read_doctors_file()
-pm.read_patients_file()
+
 
 # Nikki
 class Management:
@@ -377,7 +376,6 @@ class Management:
         print("Doctors Menu:\n1 - Display Doctors list\n2 - Search for doctor by ID\n3 - Search for doctor by name\n4 - Add doctor\n5 - Edit doctor info\n6 - Back to the Main Menu")
         menu2=int(input(">>> "))
         if menu2 == 1:
-            print("Id   Name                   Speciality      Timing          Qualification   Room Number")
             dm.display_doctors_list()
             input()
             self.doctors_menu()
@@ -405,7 +403,6 @@ class Management:
         print("Patients Menu:\n1 - Display patients list\n2 - Search for patient by ID\n3 - Add patient\n4 - Edit patient info\n5 - Back to the Main Menu")
         menu3=int(input(">>> "))
         if menu3 == 1:
-            print("ID   Name		    Disease	    Gender	    Age")
             pm.display_patients_list()
             input()
             self.patients_menu()
