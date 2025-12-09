@@ -85,6 +85,7 @@ class DoctorManager:
 
         new_doctor = Doctor(doc_id, doctor_name, specialization, working_time, qualification, room_num)
         self.doctor_list.append(new_doctor)
+        return new_doctor
 
     #
     def read_doctors_file(self):
@@ -237,7 +238,7 @@ class Patient:
 
     #returns the patient objects as a formatted string
     def __str__(self):
-        return f"{self.pid}   {self.pat_name}                  {self.disease}         {self.gender}          {self.age}"
+        return f"Name: Patient ID: {self.pid}, {self.pat_name}, Disease: {self.disease}, Gender:{self.gender}, Age: {self.age}"
     
 
 #chloe
@@ -267,7 +268,7 @@ class PatientManager:
         age = input("Enter Patient Age: ")
 
         new_patient = Patient(pid , pat_name , disease , gender , age)
-        self.patient_list.append(new_patient)
+        return new_patient
 
     #
     def read_patients_file(self):
@@ -349,7 +350,6 @@ class PatientManager:
                 #writes the list in the patients.txt file
                 data.write(format_pat_info + "\n")
 
-    #method to add the new patient to the file
     def add_patient_to_file(self):
         #calls enter_patient_info() method to get the inputted info from the user
         new_patient = self.enter_patient_info()
